@@ -1,0 +1,79 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'fs',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.21
+3 info using node@v0.10.30
+4 warn package.json Heroku_gadlip@0.0.0 No description
+5 warn package.json Heroku_gadlip@0.0.0 No repository field.
+6 warn package.json Heroku_gadlip@0.0.0 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'fs', null ]
+9 verbose cache add name=undefined spec="fs" args=["fs",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'fs',
+10 verbose parsed url   path: 'fs',
+10 verbose parsed url   href: 'fs' }
+11 silly lockFile 3f4bb586-fs fs
+12 verbose lock fs C:\Users\Kim\AppData\Roaming\npm-cache\3f4bb586-fs.lock
+13 silly lockFile 3f4bb586-fs fs
+14 silly lockFile 3f4bb586-fs fs
+15 verbose addNamed [ 'fs', '' ]
+16 verbose addNamed [ null, '*' ]
+17 silly lockFile a107b96b-fs fs@
+18 verbose lock fs@ C:\Users\Kim\AppData\Roaming\npm-cache\a107b96b-fs.lock
+19 silly addNameRange { name: 'fs', range: '*', hasData: false }
+20 verbose request where is /fs
+21 verbose request registry https://registry.npmjs.org/
+22 verbose request id ea7f29cd3f18e0f8
+23 verbose url raw /fs
+24 verbose url resolving [ 'https://registry.npmjs.org/', './fs' ]
+25 verbose url resolved https://registry.npmjs.org/fs
+26 verbose request where is https://registry.npmjs.org/fs
+27 info trying registry request attempt 1 at 17:26:09
+28 http GET https://registry.npmjs.org/fs
+29 http 404 https://registry.npmjs.org/fs
+30 silly registry.get cb [ 404,
+30 silly registry.get   { date: 'Fri, 15 Aug 2014 08:26:09 GMT',
+30 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+30 silly registry.get     etag: '"5BQZWWEVHQEXWCPP0V3B1TODR"',
+30 silly registry.get     'content-type': 'application/json',
+30 silly registry.get     'cache-control': 'max-age=0',
+30 silly registry.get     'content-length': '397',
+30 silly registry.get     'accept-ranges': 'bytes',
+30 silly registry.get     via: '1.1 varnish',
+30 silly registry.get     age: '0',
+30 silly registry.get     'x-served-by': 'cache-ty66-TYO',
+30 silly registry.get     'x-cache': 'MISS',
+30 silly registry.get     'x-cache-hits': '0',
+30 silly registry.get     'x-timer': 'S1408091169.010596,VS0,VE522',
+30 silly registry.get     vary: 'Accept',
+30 silly registry.get     'keep-alive': 'timeout=10, max=50',
+30 silly registry.get     connection: 'Keep-Alive' } ]
+31 silly lockFile a107b96b-fs fs@
+32 silly lockFile a107b96b-fs fs@
+33 error 404 Not Found
+33 error 404
+33 error 404 'fs' is not in the npm registry.
+33 error 404 You should bug the author to publish it
+33 error 404 It was specified as a dependency of 'Heroku_gadlip'
+33 error 404
+33 error 404 Note that you can also install from a
+33 error 404 tarball, folder, or http url, or git url.
+34 error System Windows_NT 6.1.7601
+35 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "fs" "--save"
+36 error cwd c:\Users\Kim\My Documents\Heroku_jazz
+37 error node -v v0.10.30
+38 error npm -v 1.4.21
+39 error code E404
+40 verbose exit [ 1, true ]
