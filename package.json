@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.8.4",
+    "express3-handlebars": "^0.5.2",
     "logfmt": "^1.1.2"
   }
 }
