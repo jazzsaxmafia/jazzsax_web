@@ -1,0 +1,5 @@
+body { width:960px; border:1px solid #ccc; margin:20px auto;}
+a { text-decoration: none; color:#ccc; font-size:12px;}
+ul {list-style: none;}
+nav li {display:inline;}
+nav li a { float : left;}

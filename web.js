@@ -29,6 +29,14 @@ app.get('/about', function(req, res){
 	res.render('about', {fortune : randomFortune});
 });
 
+app.get('/application', function(req, res){
+	res.render('application');
+});
+
+app.get('/contact', function(req, res){
+	res.render('contact');
+});
+
 app.use(function(req, res, next){
 	res.status(404);
 	res.render('404');
