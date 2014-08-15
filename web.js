@@ -65,6 +65,6 @@ http.createServer(function(req,res){
  404);
  break;
  }
-}).listen(3000);
+}).listen(process.env.PORT || 5000);
 console.log('Server started on localhost:3000; press Ctrl-C to terminate....');
 
