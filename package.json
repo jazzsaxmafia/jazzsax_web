@@ -12,5 +12,13 @@
     "express": "^4.8.4",
     "express3-handlebars": "^0.5.2",
     "logfmt": "^1.1.2"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "grunt": "^0.4.5",
+    "grunt-cafe-mocha": "^0.1.12",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-exec": "^0.4.6",
+    "mocha": "^1.21.4"
   }
 }
