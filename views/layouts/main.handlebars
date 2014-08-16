@@ -1,48 +1,81 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
- 		<title>Saxoo</title>
- 		{{#if showTests}}
- 			<link rel="stylesheet" href="/vendor/mocha.css">
- 		{{/if}}
- 
- 		<link rel="stylesheet" href="style/style1.css"/>
- 		<script src="//code.jquery.com/jquery-2.0.2.min.js"></script>
-	</head>
+<head>
+	<meta charset="utf-8"/>
+	<title>Saxoo</title>
+	{{#if showTests}}
+	<link rel="stylesheet" href="/vendor/mocha.css">
+	{{/if}}
 
-	<body>
+	<link rel="stylesheet" href="style/style1.css"/>
+	<script src="//code.jquery.com/jquery-2.0.2.min.js"></script>
+</head>
+
+<body>
+	<div id="container">
 		<header>
-		<h1>Saxoo</h1>
-		<h3>Looking for Some Awesome Applications?</h3>
+			<h1>Saxoo</h1>
+			<h3>Looking for Some Awesome Applications?</h3>
+
+		</header>
 		<nav>
-			<ul>
-				<li><a href="/" id="logo">Home</a></li>
-				<li><a href="/about">About Page</a></li>
-				<li><a href="/application">Applications</a></li>
-				<li><a href="/contact">Contact</a></li>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/about">About Page</a>
+						<ul>
+							<li><a href="/">Saxoo</a></li>
+							<li><a href="/">Saxoo</a></li>
+							<li><a href="/">Saxoo</a></li>
+						</ul>
+					</li>
+					<li><a href="/application">Applications</a>
+						<ul>
+							<li><a href="/">Saxoo</a></li>
+							<li><a href="/">Saxoo</a></li>
+							<li><a href="/">Saxoo</a></li>
+						</ul>
+					</li>
+					<li><a href="/contact">Developer</a></li>
 
-			</ul>
-		</nav>
-	</header>
-	<article>
- 		{{{body}}}
- 	</article>
+				</ul>
+			</nav>
+		<section id="main" role="main">
+			<article>
 
- 	{{#if showTests}}
- 		<div id="mocha"></div>
- 		<script src="/vendor/mocha.js"></script>
-		<script src="/vendor/chai.js"></script>
-		<script>
-			mocha.ui('tdd');
-			var assert = chai.assert;
-		</script>
-		<script src="/qa/tests-global.js"></script>
-		{{#if pageTestScript}}
-			<script src="{{pageTestScript}}"></script>
-		{{/if}}
-		<script>mocha.run();</script>
+				{{{body}}}
+			</article>
+		</section>
+		
+		<footer>
+			<p id="about">I am always trying to build up something cool</p>
+
+			<div id="footerlist">        
+				<h3>Contact</h3>
+				<ul>
+					<li><a href="/email">Via Email</a></li>
+					<li><a href="/contact_form">Web Form</a></li>
+					<li><a href="/pigeon">Carrier Pigeon</a></li>
+				</ul>
+			</div>
+
+			<p id="footercopy">All content Saxoo</p>
+
+		</footer>
+	</div>
+	{{#if showTests}}
+	<div id="mocha"></div>
+	<script src="/vendor/mocha.js"></script>
+	<script src="/vendor/chai.js"></script>
+	<script>
+	mocha.ui('tdd');
+	var assert = chai.assert;
+	</script>
+	<script src="/qa/tests-global.js"></script>
+	{{#if pageTestScript}}
+	<script src="{{pageTestScript}}"></script>
+	{{/if}}
+	<script>mocha.run();</script>
 	{{/if}}
 </script>
-	</body>
+</body>
 </html>

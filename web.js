@@ -23,13 +23,34 @@ app.get('/', function(req, res) {
   	res.render('home');
 });
 
+app.get('/headers', function(req, res){
+	res.set('Content-Type', 'text/plain');
+	var s = '';
+	for(var name in req.headers){
+		s += name + ': ' + req.headers[name] + '\n';		
+	}
+	s += req.ip + '\n';
+	s += req.host + '\n';
+	res.send(s);
+})
 app.get('/about', function(req, res){
-	
-	res.render('about', {
+	sidebars = ['a','b','c','d','e','f'];
+	res.render('about',{
 		fortune : fortune.getFortune(),
-		pageTestScript: '/qa/tests-about.js'
+		pageTestScript: '/qa/tests-about.js',
+		
+
 	});
 });
+
+app.get('/greeting', function(req, res){
+	res.render('about', {
+		message : 'Welcome!',
+		style: req.query.style,
+		userid: req.cookie.userid,
+		username: req.session.username,
+	})
+})
 
 app.get('/application', function(req, res){
 	res.render('application');
@@ -47,6 +68,13 @@ app.get('/tours/hood-river', function(req, res){
 app.get('/tours/request-group-rate', function(req, res){
 	res.render('tours/request-group-rate');
 });
+
+app.post('/process-contact', function(req, res){
+	console.log('Received contact from ' + req.body.name + ' <'
+				+ req.body.email + '>');
+
+	res.redirect(303, '/thank-you');
+})
 
 app.use(function(req, res, next){
 	res.status(404);
