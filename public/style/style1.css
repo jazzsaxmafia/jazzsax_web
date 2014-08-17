@@ -1,33 +1,52 @@
 header {
-  background-color:#DC6F65;
+  background-color:#ffffff;
   height:100px; /*+*/
+
+}
+
+header#headerimg{
+  position:relative;
+  left: 100px;
+  bottom:10px;
+}
+
+header h1 {
+  text-indent: 50px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+header h3 {
+  text-indent: 50px;
 }
 div#container {
-  /*width:960px;*/
+  width:1200px;
   padding:0;
   margin:auto;
-  margin-top:20px;
-  border:1px solid grey; /*+*/
+  /*margin-top:20px;*/
+  /*border-left:1px solid grey;
+  border-right:1px solid grey; */
 }
 
 section#main {
-  background-color:#EBEBEB;
+  background-color:#ffffff;
   padding:0;
-  width:100%;
+  width:1080px;
   height:600px;
   /*width:780px; /*+*/
-  float:right;
+  float:left;
+  border-left: 1px solid #DCEBFF;
+  border-right: 1px solid #DCEBFF;
 }
 
 aside {
-  background-color:#8CCAF0;
+  background-color:#AFDDFA;
   height:600px;
-  width:10%; /*+*/
-  float:left; 
+  width:118px; /*+*/
+  float:right; 
 }
  /* START NAV MENU */
 nav {
-  background-color:#2C5463;
+  background-color:#3CB4FF;
   height:40px;
 }
  
@@ -49,25 +68,26 @@ nav ul li {
  
 nav li ul { 
   display: none; 
+
 }
  
 nav ul li a {
   display: block;
   text-decoration: none;
   padding: 7px 15px 3px 15px;
-  background: #2C5463;
+  background: #3CB4FF;
   color: #ffffff;  
   margin-left: 1px;
   white-space: nowrap;
   height:30px; /* Width and height of top-level nav items */
   width:150px;
   text-align:center;
-  
+  border-right: 1px solid;
  
 }
  
 nav ul li a:hover { 
-  background: #617F8A; 
+  background: #A2E9FF; 
 }
  
 nav li:hover ul {
@@ -98,8 +118,45 @@ nav ul li ul li a {
 /* END NAV MENU */
 
 footer {
-  background-color:#993398;
-   height:100px;
+  background-color:#ffffff;
+  border-top: 3px solid #DCEBFF; 
+  border-left: 1px solid #DCEBFF;
+  border-right: 1px solid #DCEBFF;
+  border-bottom: 1px solid #DCEBFF;
+   height:120px;
   clear:both; /*+*/
-  
 }
+
+/* BEGIN FOOTER STYLES */
+ 
+footer p#about {
+  width:300px;
+  margin:20px 50px 0px 30px; /* Play with these to suit */
+  float:left; /* Other elements in the footer will wrap to the right of this */
+}
+ 
+footer div#footerlist {
+  float:right; /* Place this on the other side of the footer */
+  padding-right:40px;
+  margin-top:10px; /* Play with this */
+}
+ 
+footer div#footerlist ul  {
+  padding-left:0px; /* Unindent the list so it lines up with the h3 above it. */
+}
+ 
+footer div#footerlist ul li {
+  list-style-type:none; /* Remove default discs from list items. */
+}
+ 
+footer div#footerlist h3 {
+  margin-top:0px;
+}
+ 
+footer p#footercopy {
+  clear:both;
+  text-align:center;
+  font-size:0.9em; /* Slightly smaller text for copyright text. */
+}
+ 
+/* END FOOTER STYLES */
