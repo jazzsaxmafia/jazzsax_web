@@ -1,16 +1,22 @@
 var express = require("express");
 var logfmt = require("logfmt");
+var http = require("http");
 var fs = require('fs');
 var app = express();
+var pg = require('pg');
+var socketio = require('socket.io');
 var handlebars = require('express3-handlebars')
 				.create({defaultLayout:'main'});
 var fortune = require('./lib/fortune.js');
-
+var io;
+var server;
+process.env.DATABASE_URL = "postgres://sjdqlhodimuxxc:A9BEmPib2ynTzEoAHDaJ8brc2s@ec2-23-23-183-5.compute-1.amazonaws.com:5432/ddsbjvelldv31i";
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.use(express.static(__dirname+'/public'));
 
 app.use(logfmt.requestLogger());
+
 
 
 app.use(function(req, res, next){
@@ -21,17 +27,6 @@ app.use(function(req, res, next){
 
 app.get('/', function(req, res) {
   	res.render('home');
-});
-
-app.get('/headers', function(req, res){
-	res.set('Content-Type', 'text/plain');
-	var s = '';
-	for(var name in req.headers){
-		s += name + ': ' + req.headers[name] + '\n';		
-	}
-	s += req.ip + '\n';
-	s += req.host + '\n';
-	res.send(s);
 });
 
 app.get('/machine', function(req, res){
@@ -61,13 +56,6 @@ app.get('/chatting', function(req, res){
 	res.render('chatting');
 });
 
-app.post('/process-contact', function(req, res){
-	console.log('Received contact from ' + req.body.name + ' <'
-				+ req.body.email + '>');
-
-	res.redirect(303, '/thank-you');
-})
-
 app.use(function(req, res, next){
 	res.status(404);
 	res.render('404');
@@ -81,7 +69,30 @@ app.use(function(err, req, res, next){
 	res.render('500');
 });
 
+
 var port = Number(process.env.PORT || 5000);
-app.listen(port, function() {
+
+server = app.listen(port, function() {
   console.log("Listening on " + port);
 });
+
+io = socketio.listen(server);
+io.on("connection", function(socket){
+	socket.on("message", function(data){
+
+		pg.connect(process.env.DATABASE_URL, function(err, client){
+			var query = client.query('SELECT * FROM chatting');
+			query.on('row', function(row){
+				console.log(JSON.stringfy(row));
+
+			});
+		});
+
+
+		socket.emit("message", data);
+
+
+
+	});
+});
+
