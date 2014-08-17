@@ -32,41 +32,33 @@ app.get('/headers', function(req, res){
 	s += req.ip + '\n';
 	s += req.host + '\n';
 	res.send(s);
-})
-app.get('/about', function(req, res){
-	sidebars = ['a','b','c','d','e','f'];
-	res.render('about',{
-		fortune : fortune.getFortune(),
-		pageTestScript: '/qa/tests-about.js',
-		
-
-	});
 });
 
-app.get('/greeting', function(req, res){
-	res.render('about', {
-		message : 'Welcome!',
-		style: req.query.style,
-		userid: req.cookie.userid,
-		username: req.session.username,
-	})
-})
+app.get('/machine', function(req, res){
+	res.render('machine');
+});
+
+app.get('/cv', function(req, res){
+	res.render('machine');
+});
+
+app.get('/apps', function(req, res){
+	res.render('machine');
+});
 
 app.get('/application', function(req, res){
 	res.render('application');
 });
 
+app.get('/board', function(req, res){
+	res.render('board');
+});
 
 app.get('/contact', function(req, res){
 	res.render('contact');
 });
-
-app.get('/tours/hood-river', function(req, res){
-	res.render('tours/hood-river');
-});
-
-app.get('/tours/request-group-rate', function(req, res){
-	res.render('tours/request-group-rate');
+app.get('/chatting', function(req, res){
+	res.render('chatting');
 });
 
 app.post('/process-contact', function(req, res){
